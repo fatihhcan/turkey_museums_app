@@ -1,6 +1,6 @@
 # turkey_museum_app
 
-It is an application that helps to find museums in Turkey.
+It is an application that helps to find museums in Turkey and shows their details.
 
 
 ## API
