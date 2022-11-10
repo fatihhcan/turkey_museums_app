@@ -1,16 +1,55 @@
 # turkey_museum_app
 
-A new Flutter project.
+It is an application that helps to find museums in Turkey.
+
+
+## API
+
+**Nosyapi**
+
+https://www.nosyapi.com/api/turkiye-muze-api
+- You can register and access the token.
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+https://user-images.githubusercontent.com/45641833/201022066-afd4f7f8-dcd6-4c65-ad8e-cf00dd65ddc9.mp4
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Subject:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **BLoC/Cubit** was used for State Management.
+
+- **Get It** was used for dependencies injected.
+
+- **Dio** was used for API requests.
+
+- **Screen Util** adapting screen size.
+
+
+## Folder Structure
+
+```
+turkey_museums_app
+│   
+└───lib
+    │
+    └───core
+    │    │    
+    │    └───base
+    │    │
+    │    └───components
+    │    │    
+    │    └───constants
+    │    │
+    │    └───extensions
+    │    │
+    │    └───init
+    │    │
+    │    └───utility
+    └───features
+         └───explore_museum
+         └───filter/search
+         └───home
+         └───museum
+```
