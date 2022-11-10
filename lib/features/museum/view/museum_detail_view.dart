@@ -7,7 +7,6 @@ import 'package:turkey_museum_app/core/extensions/context_extensions.dart';
 import 'package:turkey_museum_app/core/init/di/locator.dart';
 import 'package:turkey_museum_app/features/museum/cubit/museum_cubit.dart';
 import '../../../core/base/view/base_view.dart';
-import '../../../core/constants/enums/navigation_routes.dart';
 import '../model/museum_model.dart';
 
 class MuseumDetailView extends StatelessWidget {
@@ -33,8 +32,7 @@ class MuseumDetailView extends StatelessWidget {
             ),
             actions: [
               GestureDetector(
-                  onTap: () => cubit.navigateToView(navigationPath: NavigationConstants.MUSEUM_VIEW,
-  ),
+                  onTap: () => cubit.navigateToPop(),
         
                   child: SvgPicture.asset(SVGImagePaths.instance.backArrow)),
               context.sizedBoxLowHorizontal
