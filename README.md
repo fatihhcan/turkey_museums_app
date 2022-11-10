@@ -16,7 +16,7 @@ https://www.nosyapi.com/api/turkiye-muze-api
 https://user-images.githubusercontent.com/45641833/201022066-afd4f7f8-dcd6-4c65-ad8e-cf00dd65ddc9.mp4
 
 
-## Subject:
+## Subject
 
 - **BLoC/Cubit** was used for State Management.
 
