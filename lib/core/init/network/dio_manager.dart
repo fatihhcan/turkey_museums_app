@@ -15,24 +15,28 @@ class DioManager {
 
   DioManager.init();
 
+  //DioClient MuseumNetworkClient = DioClient(baseUrl: AppConstants.BASE_URL);
 
-  DioClient IbbNetworkClient = DioClient(baseUrl: AppConstants.BASE_URL);
-  
-
-  DioClient TKMNetworkClient = DioClient(
+  DioClient MuseumNetworkClient = DioClient(
       baseUrl: AppConstants.BASE_URL,
-      interceptorsWrapper: InterceptorsWrapper(onRequest: (options, handler) async {
+      interceptorsWrapper:
+          InterceptorsWrapper(onRequest: (options, handler) async {
         String accessToken = AppStateManager.instance.accessToken;
-        if (AppStateManager.instance.isDevelop && accessToken.isNotEmpty) {
-          options.headers.putIfAbsent(AuthorizationConstants.authorization.value(),
-              () => AuthorizationConstants.bearer.value(accessToken: accessToken));
+        if (accessToken.isNotEmpty) {
+          options.headers.putIfAbsent(
+              AuthorizationConstants.authorization.value(),
+              () => AuthorizationConstants.bearer
+                  .value(accessToken: accessToken));
         }
-        options.contentType = Headers.formUrlEncodedContentType;
+        options.contentType = Headers.jsonContentType;
         return handler.next(options);
       }, onResponse: (response, handler) {
         return handler.next(response);
       }, onError: (DioError e, handler) {
         throw DioException.fromDioError(e);
-      })
+      }));
+
+  DioClient FilterNetworkClient = DioClient(
+      baseUrl: AppConstants.CITY_COUNTY_ASSET,
       );
 }

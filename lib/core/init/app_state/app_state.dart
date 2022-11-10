@@ -1,16 +1,19 @@
-//import 'package:cep_trafik_mobile/feature/announcements/model/announcements_model.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:turkey_museum_app/features/museum/model/museum_model.dart';
 
-
+String apiAccessToken = dotenv.get("API_ACCESS_TOKEN", fallback: "");
 class AppStateManager {
   static AppStateManager? _instance;
   static AppStateManager get instance {
     return _instance ??= AppStateManager.init();
   }
 
-  bool isDevelop = true;
-  String accessToken = '';
+  String accessToken = apiAccessToken;
 
-  //List<AnnouncementsModel> announcements = [];
+  List<MuseumModel> museum = [];
+  List<MuseumModel> museumIzmir = [];
+  List<MuseumModel> museumAnkara = [];
+  List<dynamic> cityList = [];
 
 
   AppStateManager.init();
